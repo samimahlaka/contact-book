@@ -1,5 +1,10 @@
 from flask import Flask, render_template
+from models import Contact
 app = Flask(__name__)
+
+def 
+
+
 
 @app.route('/')
 def home():
