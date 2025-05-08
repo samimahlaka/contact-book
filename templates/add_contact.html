@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Contact</title>
+</head>
+<body>
+    <form action="/add_contact" method="POST">
+
+        {{form.hidden_tag()}}
+
+        {{form.name.label(class ='input_label') }} {{form.name()}}
+        {{form.phone.label(class = 'input_label')}} {{form.phone()}}
+        {{form.email.label(class ='input_label') }} {{form.email()}}
+        {{form.address.label(class = 'input_label')}} {{form.address()}}
+
+        
+
+
+
+
+
+
+        {{form.submit(value='Add new contact')}}
+
+    </form>
+</body>
+</html>
