@@ -3,27 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={{url_for('static', filename='style.css')}}>
     <title>Add Contact</title>
 </head>
-<body>
-    <form action="/add_contact" method="POST">
+<body class = 'add_body'>
 
-        {{form.hidden_tag()}}
+    <h1>New Contact </h1>
+    
+        <form action="/add_contact" method="POST">
+            
+                {{ form.hidden_tag() }}
+                <div class="form_wrapper">
+                    <form method="POST", action="/add_contact">
+                      {{ form.hidden_tag() }}
+                  
+                      <div class="form_row">
+                        <label class="input_label">{{ form.name.label }}</label>
+                        {{ form.name() }}
+                      </div>
+                  
+                      <div class="form_row">
+                        <label class="input_label">{{ form.phone.label }}</label>
+                        {{ form.phone() }}
+                      </div>
+                    
+                      <div class="form_row">
+                        <label class="input_label">{{ form.email.label }}</label>
+                        {{ form.email() }}
+                      </div>
+                    
+                      <div class="form_row">
+                        <label class="input_label">{{ form.address.label }}</label>
+                        {{ form.address() }}
+                      </div>
+                  
+                      
+                    </form>
+                    <div class="btn_form_row" ">
+                        {{ form.submit(class="add_btn", value='Add new contact') }}
+                      </div>
+                   
+                    <a href="/" class="back_link">← Back to Home</a>
+                  </div>
+                  
+              
+              
+        </form>
 
-        {{form.name.label(class ='input_label') }} {{form.name()}}
-        {{form.phone.label(class = 'input_label')}} {{form.phone()}}
-        {{form.email.label(class ='input_label') }} {{form.email()}}
-        {{form.address.label(class = 'input_label')}} {{form.address()}}
-
-        
-
-
-
-
-
-
-        {{form.submit(value='Add new contact')}}
-
-    </form>
+    
 </body>
 </html>
