@@ -39,6 +39,10 @@ def add_contact():
 
     return render_template('add_contact.html',form=form)
 
+@app.route('/view_contacts', methods = ['GET'])
+def view_contacts():
+    contacts= Contact.query.all()
+    return render_template('view_contacts.html',contacts=contacts)
 
 
 

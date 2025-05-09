@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <title>Contacts List</title>
+</head>
+<body>
+    <h1>List of Contacts</h1>
+    <table class="contact_table">
+        
+    <tr>
+        <th class="col_id">id</th>
+        <th class ='col_name'>Name</th>
+        <th class="col_phone">Phone</th>
+        <th class="col_email">Email</th>
+        <th class="col_address">Address</th>
+        
+    </tr>
+
+
+    {% for contact in contacts %}
+        <tr>
+            <td>{{ contact.id }}</td>
+            <td>{{contact.name}}</td>
+            <td>{{contact.phone}}</td>
+            <td>{{contact.email}}</td>
+            <td>{{contact.address}}</td>
+        </tr>
+
+
+    {% endfor %}
+    </table> 
+    
+    <a href="/" class="back_link">Back to home</a>
+
+</body>
+</html>
