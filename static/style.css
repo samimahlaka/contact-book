@@ -34,60 +34,95 @@ input[type='email'], textarea {
     align-items: center;
     margin-bottom: 12px;
     width: 50%;
-  }
-  
-  .input_label {
-    width: 43%;
-    margin-right: 10px;
-    text-align: right;
-    color: darkslategrey;
-    text-transform: capitalize;
-  }
-  
-  .input_box {
-    flex:5;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid darkgrey;
-    width: 72%; 
-  }
+}
 
-  h1{
-    text-align: center;
-    margin-bottom: 4px;
-    margin-top: 20px;
-    padding: 15px;
-  }
+.input_label {
+width: 43%;
+margin-right: 10px;
+text-align: right;
+color: darkslategrey;
+text-transform: capitalize;
+}
 
-  .form_wrapper {
-    width: 40%;
-    margin: 30px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  .back_link {
-    display: inline-block;
-    margin-top: 20px;
-    color: #007bff;
-    text-decoration: none;
-  }
-  
-  .back_link:hover {
-    text-decoration: underline;
-  }
-  .form_row{
-    width: 72%;
-    align-items: center;
-  }
+.input_box {
+flex:5;
+padding: 10px;
+border-radius: 5px;
+border: 1px solid darkgrey;
+width: 72%; 
+}
 
-  .btn_form_row{
-    margin-top: 0px;
-  }
+h1{
+text-align: center;
+margin-bottom: 4px;
+margin-top: 20px;
+padding: 15px;
+}
 
+.form_wrapper {
+width: 40%;
+margin: 30px auto;
+padding: 20px;
+border: 1px solid #ccc;
+border-radius: 8px;
+background-color: #f9f9f9;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+text-align: center;
+}
 
+.back_link {
+display: inline-block;
+margin-top: 20px;
+color: #007bff;
+text-decoration: none;
+}
 
+.back_link:hover {
+text-decoration: underline;
+}
+.form_row{
+width: 72%;
+align-items: center;
+}
+
+.btn_form_row{
+margin-top: 0px;
+}
+
+.table_div{
+    overflow-x: auto;
+}
+
+.contact_table {
+  width: 90%;
+  margin: 30px auto;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  table-layout: fixed;
+  word-wrap: break-word;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact_table th,
+.contact_table td {
+  border: 1px solid #ddd;
+  padding: 12px 10px;
+  text-align: left;
+  word-break: break-word;
+}
+
+.contact_table th {
+  background-color:darkslategrey;
+  color: white;
+  text-transform: capitalize;
+}
+
+.contact_table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.contact_table tr:hover {
+  background-color: #e0e0e0;
+  cursor: pointer;
+}
