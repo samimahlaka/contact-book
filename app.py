@@ -25,8 +25,15 @@ def add_contact():
     form = contactForm()
 
     if form.validate_on_submit():
+        Name= form.name.data.strip().lower()
+        existing = Contact.query.filter_by(name=Name).first()
+        if existing:
+            flash("A contact with this name already exist, please use another name")
+            return redirect ('/add_contact')
+        
+        
         newContact = Contact(
-            name = form.name.data,
+            name = Name,
             phone = form.phone.data,
             email = form.email.data, 
             address = form.address.data
@@ -43,7 +50,10 @@ def add_contact():
 def view_contacts():
         contacts=Contact.query.all()
         return render_template('view_contacts.html', contacts=contacts)
+    
 
+
+    
 
 
 if __name__ == '__main__':

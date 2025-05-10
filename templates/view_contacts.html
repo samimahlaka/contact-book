@@ -9,7 +9,22 @@
 </head>
 <body>
     <h1>List of Contacts</h1>
+
+    
+
+
     <div class='table_div'>
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul >
+                {% for message in messages %}
+        
+                    <li class= 'li_msg'>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
         <table class="contact_table">
             
         <tr>
@@ -33,9 +48,11 @@
         {% endfor %}
 
         </table> 
-    </div>s
-        
-    <a href="/" class="back_link">Back to home</a>
+    </div>
+    <div class = 'a_div'>
+        <a href="/" class="back_link">Back to home</a>
+    </div>   
+    
 
 </body>
 </html>
