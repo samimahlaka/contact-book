@@ -159,3 +159,30 @@ ul{
 
 }
 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color:grey;
+  padding: 10px 20px;
+}
+
+.logo-text {
+  color: white;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.nav-right a {
+  color: white;
+  margin-left: 70px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-right a:hover {
+  text-decoration: underline;
+}
+
+
+

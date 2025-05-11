@@ -1,63 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href={{url_for('static', filename='style.css')}}>
-    <title>Add Contact</title>
-</head>
-<body class = 'add_body'>
+{% extends 'base.html' %}
 
-    <h1>New Contact </h1>
+{% block content %}
 
-      {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        <ul class= " error_flash">
-          {% for message in messages %}
-            <li> {{message}} </li>
-          {% endfor%}
-        </ul>
-        {% endif %}
-      {% endwith %}
+<h1>New Contact</h1>
 
-    
-        <form action="/add_contact" method="POST">
-            
-                {{ form.hidden_tag() }}
-                <div class="form_wrapper">
-                    <form method="POST", action="/add_contact">
-                      {{ form.hidden_tag() }}
-                  
-                      <div class="form_row">
-                        <label class="input_label">{{ form.name.label }}</label>
-                        {{ form.name() }}
-                      </div>
-                  
-                      <div class="form_row">
-                        <label class="input_label">{{ form.phone.label }}</label>
-                        {{ form.phone() }}
-                      </div>
-                    
-                      <div class="form_row">
-                        <label class="input_label">{{ form.email.label }}</label>
-                        {{ form.email() }}
-                      </div>
-                    
-                      <div class="form_row">
-                        <label class="input_label">{{ form.address.label }}</label>
-                        {{ form.address() }}
-                      </div>
-                  
-                      
-                    </form>
-                    <div class="btn_form_row">
-                        {{ form.submit(class="add_btn", value='Add new contact') }}
-                    </div>
-                   
-                    <a href="/" class="back_link">← Back to Home</a>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class="error_flash">
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
 
-                       
+<div class="form_wrapper">
+  <form method="POST" action="/add_contact">
+    {{ form.hidden_tag() }}
 
-    
-</body>
-</html>
+    <div class="form_row">
+      <label class="input_label">{{ form.name.label }}</label>
+      {{ form.name(class="input_box") }}
+    </div>
+
+    <div class="form_row">
+      <label class="input_label">{{ form.phone.label }}</label>
+      {{ form.phone(class="input_box") }}
+    </div>
+
+    <div class="form_row">
+      <label class="input_label">{{ form.email.label }}</label>
+      {{ form.email(class="input_box") }}
+    </div>
+
+    <div class="form_row">
+      <label class="input_label">{{ form.address.label }}</label>
+      {{ form.address(class="input_box") }}
+    </div>
+
+    <div class="btn_form_row">
+      {{ form.submit(class="add_btn", value='Add new contact') }}
+    </div>
+  </form>
+
+  <a href="/" class="back_link">← Back to Home</a>
+</div>
+
+{% endblock %}

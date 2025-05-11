@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+{% extends 'base.html'%}
 
-    <title>Contacts List</title>
-</head>
-<body>
+{%block content %}
     <h1>List of Contacts</h1>
 
     
@@ -19,8 +12,7 @@
         {% if messages %}
             <ul >
                 {% for message in messages %}
-        
-                    <li class= 'li_msg'>{{ message }}</li>
+                    <li>{{ message }}</li>
                 {% endfor %}
             </ul>
         {% endif %}
@@ -54,5 +46,4 @@
     </div>   
     
 
-</body>
-</html>
+{% endblock %}
