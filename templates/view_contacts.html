@@ -20,7 +20,7 @@
         <table class="contact_table">
             
         <tr>
-            <th class="col_id">id</th>
+            
             <th class ='col_name'>Name</th>
             <th class="col_phone">Phone</th>
             <th class="col_email">Email</th>
@@ -31,7 +31,7 @@
 
         {% for contact in contacts %}
             <tr>
-                <td>{{ contact.id }}</td>
+                
                 <td>{{ contact.name }}</td>
                 <td>{{ contact.phone.replace(" ","") }}</td>
                 <td>{{ contact.email }}</td>

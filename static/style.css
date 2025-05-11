@@ -158,24 +158,30 @@ ul{
   max-width: 500px
 
 }
-
 .navbar {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  background-color:grey;
+  background-color: grey;
   padding: 10px 20px;
 }
 
-.logo-text {
+.nav-left, .nav-right {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.nav-left .logo-text {
+  font-size: 20px;
   color: white;
   font-weight: bold;
-  font-size: 22px;
 }
 
 .nav-right a {
+  margin-left: 15px;
   color: white;
-  margin-left: 70px;
   text-decoration: none;
   font-weight: bold;
 }
@@ -184,5 +190,22 @@ ul{
   text-decoration: underline;
 }
 
+
+.delete_contact {
+ 
+  list-style: none;
+  padding: 8px;
+  margin-top: 8px;
+  margin-bottom: 12px;
+  margin-left: 100px;
+  color: red;
+  background-color: #ffe6e6;
+  border: 1px solid #cc0000;
+  border-radius: 5px;
+  text-align: center;
+  max-width: 500px;
+
+
+}
 
 

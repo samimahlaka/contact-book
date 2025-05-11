@@ -1,4 +1,4 @@
-from flask import Flask, render_template, flash, redirect
+from flask import Flask, render_template, flash, redirect, request
 from flask_sqlalchemy import SQLAlchemy
 from models import Contact, db
 from forms import contactForm
@@ -52,8 +52,41 @@ def view_contacts():
         return render_template('view_contacts.html', contacts=contacts)
     
 
-
+@app.route('/delete_contact', methods = ['GET', 'POST'])
+def delete_contact():
+    if request.method == 'POST':
+        name = request.form.get('name')
+        
+        existing = Contact.query.filter_by(name=name.lower()).first()
+        if existing:
+            db.session.delete(existing)
+            db.session.commit()
+            
+            flash(f'Contact "{name}" has been deleted successfully!')
+            return redirect('/view_contacts')
+        else:
+            flash(f'No contact found with name "{name}".')
+            return redirect('/delete_contact')
     
+    return render_template("delete_contact.html")
+
+
+@app.route('/update_contact/<int:id>', methods = 'POST')
+def update_contact(id):
+    form = contactForm
+    if form.validate_on_submit:
+        contact_update = Contact(
+            name = form.name.data,
+            phone = form.phone.data,
+            email = form.email.data, 
+            address = form.address.data
+        )
+        
+        db.session.update()
+        
+    
+
+        
 
 
 if __name__ == '__main__':
